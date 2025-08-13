@@ -115,12 +115,9 @@
   <div class="wrap">
     <div class="activity" id="activity">
       <section class="panel" id="contentPanel" aria-live="polite">
-        <h1 id="contentTitle">How to use this activity</h1>
-        <p class="lead" id="contentBody">
-          Select any of the five tiles on the right. The related guidance will appear here,
-          along with an illustrative image below the text.
-        </p>
-        <img class="context" id="contentImage" alt="" style="display:none;">
+        <h1 id="contentTitle"></h1>
+        <p class="lead" id="contentBody"></p>
+        <img class="context" id="contentImage" alt="">
       </section>
       <nav class="grid" aria-label="Verification activities">
         <button class="thumb" aria-selected="false" data-title="Reverse Search or Keyword Search" data-content='<ul><li>Copy and paste specific phrases, names, or statistics from the AI&apos;s output into another search engine.</li><li>Add terms like <strong>&ldquo;fact check&rdquo;</strong>, <strong>&ldquo;provide the source&rdquo;</strong>, <strong>&ldquo;is it true&rdquo;</strong>, <strong>&ldquo;hoax&rdquo;</strong>, or <strong>&ldquo;debunked&rdquo;</strong> to your queries.</li><li>Copilot provides superscript numbers at the end of facts that link to its sources.</li></ul>' data-below="Reverse Search or Keyword Search 1.png"><img src="Reverse Search or Keyword Search.png" alt=""><span class="label">Reverse Search or Keyword Search</span></button>
@@ -154,6 +151,10 @@
       thumbs.forEach(btn=>{
         btn.addEventListener('click', ()=>selectThumb(btn));
       });
+      // Auto-load the first activity on page load
+      if(thumbs.length > 0){
+        selectThumb(thumbs[0]);
+      }
     })();
   </script>
 </body>
